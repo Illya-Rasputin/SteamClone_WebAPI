@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DAL.Repositories
+{
+    public class GameRepository : GenericRepository<GameEntity>
+    {
+        private readonly AppDbContext _context;
+
+        public GameRepository(AppDbContext context) : base(context)
+        {
+            _context = context;
+        }
+
+        public IQueryable<GameEntity> Games => GetAll();
+
+        public async Task<GameEntity?> GetByGenreAsync(string name)
+        {
+            return await _context.Games
+                .FirstOrDefaultAsync(g => g.Genre.Name.ToLower() == name.ToLower());
+        }
+
+        public async Task<GameEntity?> GetByMaxPriceAsync(decimal maxPrice)
+        {
+            return await _context.Games
+                .FirstOrDefaultAsync(g => g.Price <= maxPrice);
+        }
+    }
+}

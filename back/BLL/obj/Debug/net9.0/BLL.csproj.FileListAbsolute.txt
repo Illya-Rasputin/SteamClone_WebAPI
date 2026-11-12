@@ -1,0 +1,12 @@
+C:\Users\cride\source\repos\SteamClone\back\BLL\bin\Debug\net9.0\BLL.deps.json
+C:\Users\cride\source\repos\SteamClone\back\BLL\bin\Debug\net9.0\BLL.dll
+C:\Users\cride\source\repos\SteamClone\back\BLL\bin\Debug\net9.0\BLL.pdb
+C:\Users\cride\source\repos\SteamClone\back\BLL\obj\Debug\net9.0\BLL.csproj.AssemblyReference.cache
+C:\Users\cride\source\repos\SteamClone\back\BLL\obj\Debug\net9.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cride\source\repos\SteamClone\back\BLL\obj\Debug\net9.0\BLL.AssemblyInfoInputs.cache
+C:\Users\cride\source\repos\SteamClone\back\BLL\obj\Debug\net9.0\BLL.AssemblyInfo.cs
+C:\Users\cride\source\repos\SteamClone\back\BLL\obj\Debug\net9.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\cride\source\repos\SteamClone\back\BLL\obj\Debug\net9.0\BLL.dll
+C:\Users\cride\source\repos\SteamClone\back\BLL\obj\Debug\net9.0\refint\BLL.dll
+C:\Users\cride\source\repos\SteamClone\back\BLL\obj\Debug\net9.0\BLL.pdb
+C:\Users\cride\source\repos\SteamClone\back\BLL\obj\Debug\net9.0\ref\BLL.dll

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "lMuzTwxrUA8=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\cride\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.20\\microsoft.aspnetcore.openapi.9.0.20.nupkg.sha512",
+    "C:\\Users\\cride\\.nuget\\packages\\microsoft.openapi\\1.6.30\\microsoft.openapi.1.6.30.nupkg.sha512",
+    "C:\\Users\\cride\\.nuget\\packages\\swashbuckle.aspnetcore\\11.0.0\\swashbuckle.aspnetcore.11.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
