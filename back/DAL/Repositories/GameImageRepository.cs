@@ -24,5 +24,6 @@ namespace DAL.Repositories
             return await _context.GameImages
                 .FirstOrDefaultAsync(image => image.GameId == id);
         }
+
     }
 }

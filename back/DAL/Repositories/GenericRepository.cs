@@ -67,7 +67,7 @@ namespace DAL.Repositories
 
         public IQueryable<TEntity> GetAll()
         {
-            return _context.Set<TEntity>().AsNoTracking();
+            return _context.Set<TEntity>();
         }
 
         public async Task<TEntity?> GetByIdAsync(int id)

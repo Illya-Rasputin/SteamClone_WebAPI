@@ -1,8 +1,9 @@
+using BLL.Mapping;
 using DAL;
 using DAL.Initializer;
 using DAL.Repositories;
 using Microsoft.EntityFrameworkCore;
-
+using BLL.Services; 
 namespace API
 {
     public class Program
@@ -16,7 +17,16 @@ namespace API
             builder.Services.AddScoped<GameRepository>();
             builder.Services.AddScoped<GameImageRepository>();
 
+            builder.Services.AddScoped<GenreService>();
+            builder.Services.AddScoped<DeveloperService>();
+            builder.Services.AddScoped<GameService>();
+
+
             builder.Services.AddControllers();
+            builder.Services.AddAutoMapper(cfg =>
+            {
+                cfg.AddProfile<MappingProfile>();
+            });
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 
             builder.Services.AddDbContext<AppDbContext>(options =>

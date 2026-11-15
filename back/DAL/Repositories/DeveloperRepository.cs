@@ -17,6 +17,24 @@ namespace DAL.Repositories
         }
 
         public IQueryable<DeveloperEntity> Developers => GetAll();
+        public async Task<bool> IsExistsAsync(string name)
+        {
+            return await Developers
+                .AsNoTracking()
+                .AnyAsync(d => d.Name.ToLower() == name.ToLower());
+
+        }
+
+        public async Task<bool> IsExistsAsync(string name, params int[] exceptionIds)
+        {
+            return await Developers
+                .AsNoTracking()
+                .AnyAsync(d => d.Name.ToLower() == name.ToLower()
+                && !exceptionIds.Contains(d.Id));
+
+        }
+
+        
 
         public async Task<DeveloperEntity?> GetByNameAsync(string name)
         {

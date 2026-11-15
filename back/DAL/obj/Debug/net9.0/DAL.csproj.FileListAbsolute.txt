@@ -13,3 +13,4 @@ C:\Users\cride\source\repos\SteamClone\back\DAL\obj\Debug\net9.0\ref\DAL.dll
 C:\Users\cride\source\repos\SteamClone\back\DAL\bin\Debug\net9.0\DAL.runtimeconfig.json
 C:\Users\cride\source\repos\SteamClone\back\DAL\obj\Debug\net9.0\DAL.genruntimeconfig.cache
 C:\Users\cride\source\repos\SteamClone\back\DAL\obj\Debug\net9.0\DAL.csproj.Up2Date
+C:\Users\cride\source\repos\SteamClone\back\DAL\obj\Debug\net9.0\DAL.sourcelink.json

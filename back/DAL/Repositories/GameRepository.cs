@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Formats.Asn1;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,28 @@ namespace DAL.Repositories
 
         public IQueryable<GameEntity> Games => GetAll();
 
+        public async Task<bool> IsExistsAsync(string name)
+        {
+            return await Games
+                .AsNoTracking()
+                .AnyAsync(d => d.Name.ToLower() == name.ToLower());
+
+        }
+        public async Task<bool> IsExistsAsync(string name, params int[] exceptionIds)
+        {
+            return await Games
+                .AsNoTracking()
+                .AnyAsync(d => d.Name.ToLower() == name.ToLower()
+                && !exceptionIds.Contains(d.Id));
+
+        }
+
+        public async Task<GameEntity?> GetByNameAsync(string name)
+        {
+            return await _context.Games
+                .FirstOrDefaultAsync(g => g.Name.ToLower() == name.ToLower());
+        }
+        
         public async Task<GameEntity?> GetByGenreAsync(string name)
         {
             return await _context.Games
