@@ -18,7 +18,8 @@ namespace DAL.Repositories
             _context = context;
         }
 
-        public IQueryable<GameEntity> Games => GetAll();
+        public IQueryable<GameEntity> Games => GetAll()
+            .Include(game => game.Images);
 
         public async Task<bool> IsExistsAsync(string name)
         {
@@ -36,21 +37,31 @@ namespace DAL.Repositories
 
         }
 
+        public async Task<GameEntity?> GetById(int id)
+        {
+            return await _context.Games
+                .Include(g => g.Images)
+                .FirstOrDefaultAsync(g => g.Id == id);
+        }
+
         public async Task<GameEntity?> GetByNameAsync(string name)
         {
             return await _context.Games
+                .Include(game => game.Images)
                 .FirstOrDefaultAsync(g => g.Name.ToLower() == name.ToLower());
         }
         
         public async Task<GameEntity?> GetByGenreAsync(string name)
         {
             return await _context.Games
+                .Include(game => game.Images)
                 .FirstOrDefaultAsync(g => g.Genres.Any(genre => genre.Name.ToLower() == name.ToLower()));
         }
 
         public async Task<GameEntity?> GetByMaxPriceAsync(decimal maxPrice)
         {
             return await _context.Games
+                .Include(game => game.Images)
                 .FirstOrDefaultAsync(g => g.Price <= maxPrice);
         }
     }

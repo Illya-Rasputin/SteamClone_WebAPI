@@ -8,7 +8,7 @@ namespace DAL.Entities
 {
     public class GenreEntity: BaseEntity
     {
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
         public List<GameEntity> Games { get; set; } = [];
     }
 }

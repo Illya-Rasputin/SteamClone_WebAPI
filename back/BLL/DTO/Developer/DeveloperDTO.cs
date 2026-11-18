@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Http;
+
 namespace BLL.DTO.Developer
 {
     public class DeveloperDTO

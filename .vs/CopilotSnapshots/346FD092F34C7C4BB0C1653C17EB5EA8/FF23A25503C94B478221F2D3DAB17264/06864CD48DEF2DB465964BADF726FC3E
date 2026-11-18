@@ -1,0 +1,64 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Formats.Asn1;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using DAL.Entities;
+using Microsoft.EntityFrameworkCore;
+
+namespace DAL.Repositories
+{
+    public class GameRepository : GenericRepository<GameEntity>
+    {
+        private readonly AppDbContext _context;
+
+        public GameRepository(AppDbContext context) : base(context)
+        {
+            _context = context;
+        }
+
+        public IQueryable<GameEntity> Games => GetAll();
+
+        public async Task<bool> IsExistsAsync(string name)
+        {
+            return await Games
+                .AsNoTracking()
+                .AnyAsync(d => d.Name.ToLower() == name.ToLower());
+
+        }
+        public async Task<bool> IsExistsAsync(string name, params int[] exceptionIds)
+        {
+            return await Games
+                .AsNoTracking()
+                .AnyAsync(d => d.Name.ToLower() == name.ToLower()
+                && !exceptionIds.Contains(d.Id));
+
+        }
+
+        public async Task<GameEntity?> GetById(int id)
+        {
+            return await _context.Games
+                .Include(g => g.Images)
+                .FirstOrDefaultAsync(g => g.Id == id);
+        }
+
+        public async Task<GameEntity?> GetByNameAsync(string name)
+        {
+            return await _context.Games
+                .FirstOrDefaultAsync(g => g.Name.ToLower() == name.ToLower());
+        }
+        
+        public async Task<GameEntity?> GetByGenreAsync(string name)
+        {
+            return await _context.Games
+                .FirstOrDefaultAsync(g => g.Genres.Any(genre => genre.Name.ToLower() == name.ToLower()));
+        }
+
+        public async Task<GameEntity?> GetByMaxPriceAsync(decimal maxPrice)
+        {
+            return await _context.Games
+                .FirstOrDefaultAsync(g => g.Price <= maxPrice);
+        }
+    }
+}

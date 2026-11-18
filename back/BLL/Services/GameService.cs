@@ -1,27 +1,33 @@
-﻿using BLL.DTO.Developer;
+﻿using AutoMapper;
+using BLL.DTO.Developer;
+using BLL.DTO.Game;
+using BLL.Settings;
+using DAL.Entities;
 using DAL.Repositories;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using BLL.DTO.Game;
-using DAL.Entities;
 
 namespace BLL.Services
 {
     public class GameService
     {
         private readonly GameRepository _gameRepository;
-        private readonly DeveloperRepository _developerRepository;
-        private readonly GameImageRepository _gameImageRepository;
+        private readonly GenreRepository _genreRepository;
+        private readonly FileService _fileService;
+        private readonly IMapper _mapper;
 
-        public GameService(GameRepository gameRepository, DeveloperRepository developerRepository, GameImageRepository gameImageRepository)
+
+        public GameService(GameRepository gameRepository, GenreRepository genreRepository, FileService fileService, IMapper mapper)
         {
             _gameRepository = gameRepository;
-            _developerRepository = developerRepository;
-            _gameImageRepository = gameImageRepository;
+            _genreRepository = genreRepository;
+            _fileService = fileService;
+            _mapper = mapper;
         }
 
         public async Task<ServiceResponse> GetAllAsync()
@@ -46,9 +52,45 @@ namespace BLL.Services
             return ServiceResponse.Success("Ігор отримано", dtos);
         }
 
+        private async Task SaveImagesAsync(GameEntity entity, IFormFile? previewImage, IEnumerable<IFormFile> images)
+        {
+            string guid = Guid.NewGuid().ToString();
+            string folderPath = Path.Combine(StaticFilesSettings.Games, guid);
+
+            if (previewImage != null)
+            {
+                var result = await _fileService.SaveImageAsync(previewImage, folderPath);
+
+                if (result.IsSuccess)
+                {
+                    entity.Images.Add(new GameImageEntity
+                    {
+                        IsPreview = true,
+                        Name = $"{guid}/{result.Payload}"
+                    });
+                }
+            }
+
+            var imageList = images?.ToList() ?? [];
+
+            foreach (var image in imageList)
+            {
+                var result = await _fileService.SaveImageAsync(image, folderPath);
+
+                if (result.IsSuccess)
+                {
+                    entity.Images.Add(new GameImageEntity
+                    {
+                        IsPreview = false,
+                        Name = $"{guid}/{result.Payload}"
+                    });
+                }
+            }
+        }
+
         public async Task<ServiceResponse> GetByIdAsync(int id)
         {
-            var entity = await _gameRepository.GetByIdAsync(id);
+            var entity = await _gameRepository.GetById(id);
 
             if (entity == null)
             {
@@ -60,7 +102,13 @@ namespace BLL.Services
                 Id = entity.Id,
                 Name = entity.Name,
                 Price = entity.Price,
-                DeveloperId = entity.DeveloperId
+                DeveloperId = entity.DeveloperId,
+                Images = entity.Images.Select(image => new GameImageDTO
+                {
+                    Name = image.Name,
+                    IsPreview = image.IsPreview,
+                    GameId = entity.Id
+                }).ToList()
             };
 
             return ServiceResponse.Success("Гру отримано", dto);
@@ -69,66 +117,112 @@ namespace BLL.Services
         {
             if (await _gameRepository.IsExistsAsync(dto.Name))
             {
-                return ServiceResponse.Error($"Гра з назвою '{dto.Name}' вже існує");
+                return ServiceResponse.Error(
+                    $"Гра з назвою '{dto.Name}' вже існує");
             }
-            var entity = new GameEntity
+
+            var entity = _mapper.Map<GameEntity>(dto);
+
+            entity.Genres = await _genreRepository.Genres
+                .Where(genre => dto.Genres
+                    .Select(name => name.ToLower())
+                    .Contains(genre.Name.ToLower()))
+                .ToListAsync();
+
+            await SaveImagesAsync(
+                entity,
+                dto.PreviewImage,
+                dto.Images);
+
+            bool result = await _gameRepository.CreateAsync(entity);
+
+            if (!result)
             {
-                Name = dto.Name,
-                Price = dto.Price,
-                DeveloperId = dto.DeveloperId
-            };
-            bool res = await _gameRepository.CreateAsync(entity);
-            if (!res)
-            {
-                return ServiceResponse.Error($"Не вдалося додати гру");
+                return ServiceResponse.Error("Не вдалося додати гру");
             }
-            var responseDto = new GameDTO
-            {
-                Id = entity.Id,
-                Name = entity.Name,
-                Price = entity.Price,
-                DeveloperId = entity.DeveloperId
-            };
-            return ServiceResponse.Success($"Гра '{dto.Name}' успішно додана", responseDto);
+
+            return ServiceResponse.Success(
+                $"Гра '{dto.Name}' успішно додана",
+                _mapper.Map<GameDTO>(entity));
         }
 
         public async Task<ServiceResponse> UpdateAsync(UpdateGameDTO dto)
         {
-            var entity = await _gameRepository.GetByIdAsync(dto.Id);
+            var entity = await _gameRepository.GetById(dto.Id);
+
             if (entity == null)
             {
-                return ServiceResponse.Error($"Гра з id '{dto.Id}' не знайдена");
+                return ServiceResponse.Error(
+                    $"Гра з id '{dto.Id}' не знайдена");
             }
-            entity.Name = dto.Name;
-            entity.Price = dto.Price;
-            entity.DeveloperId = dto.DeveloperId;
-            bool res = await _gameRepository.UpdateAsync(entity);
-            if (!res)
+
+            _mapper.Map(dto, entity);
+
+            if (dto.PreviewImage != null)
             {
-                return ServiceResponse.Error($"Не вдалося змінити дані гри");
+                var oldPreviews = entity.Images
+                    .Where(image => image.IsPreview)
+                    .ToList();
+
+                foreach (var oldPreview in oldPreviews)
+                {
+                    entity.Images.Remove(oldPreview);
+                }
             }
-            var responseDto = new GameDTO
+
+            // Replace gallery images if new files were uploaded.
+            if (dto.Images.Count > 0)
             {
-                Id = entity.Id,
-                Name = entity.Name,
-                Price = entity.Price,
-                DeveloperId = entity.DeveloperId
-            };
-            return ServiceResponse.Success($"Дані гри '{dto.Name}' успішно змінено", responseDto);
+                var oldGalleryImages = entity.Images
+                    .Where(image => !image.IsPreview)
+                    .ToList();
+
+                foreach (var oldImage in oldGalleryImages)
+                {
+                    entity.Images.Remove(oldImage);
+                }
+            }
+
+            await SaveImagesAsync(
+                entity,
+                dto.PreviewImage,
+                dto.Images);
+
+            bool result = await _gameRepository.UpdateAsync(entity);
+
+            if (!result)
+            {
+                return ServiceResponse.Error(
+                    "Не вдалося змінити дані гри");
+            }
+
+            return ServiceResponse.Success(
+                $"Дані гри '{dto.Name}' успішно змінено",
+                _mapper.Map<GameDTO>(entity));
         }
 
         public async Task<ServiceResponse> DeleteAsync(int id)
         {
-            var entity = await _gameRepository.GetByIdAsync(id);
+            var entity = await _gameRepository.GetById(id);
             if (entity == null)
             {
                 return ServiceResponse.Error($"Гра з id '{id}' не знайдена");
             }
-            bool res = await _gameRepository.DeleteAsync(entity);
-            if (!res)
+            foreach (var image in entity.Images)
             {
-                return ServiceResponse.Error($"Не вдалося видалити гру");
+                await _fileService.DeleteImageAsync(
+                    Path.Combine(StaticFilesSettings.Games, image.Name));
             }
+
+            
+            bool result = await _gameRepository.DeleteAsync(entity);
+
+            if (!result)
+            {
+                return ServiceResponse.Error(
+                    "Не вдалося видалити гру");
+            }
+
             return ServiceResponse.Success($"Гра '{entity.Name}' успішно видалена");
         }   
     }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL.DTO.Genre;
+using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -18,6 +20,8 @@ namespace BLL.DTO.Game
         public string? Description { get; set; }
         public DateTime Release { get; set; } = DateTime.Now;
         public int? DeveloperId { get; set; }
-        public List<int> GenreIds { get; set; } = new List<int>();
+        public List<GenreDTO> Genres { get; set; } = [];
+        public IFormFile? PreviewImage { get; set; }
+        public List<IFormFile> Images { get; set; } = [];
     }
 }

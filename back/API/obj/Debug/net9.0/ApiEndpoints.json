@@ -24,7 +24,7 @@
       },
       {
         "Name": "Image",
-        "Type": "System.String",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
       }
     ],
@@ -58,8 +58,24 @@
   },
   {
     "ContainingType": "API.Controllers.DeveloperController",
-    "Method": "GetByIdAsync",
+    "Method": "DeleteAsync",
     "RelativePath": "api/developer/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Controllers.DeveloperController",
+    "Method": "GetByIdAsync",
+    "RelativePath": "api/developer/by-id/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -74,15 +90,15 @@
   },
   {
     "ContainingType": "API.Controllers.DeveloperController",
-    "Method": "DeleteAsync",
-    "RelativePath": "api/developer/{id}",
-    "HttpMethod": "DELETE",
+    "Method": "GetByNameAsync",
+    "RelativePath": "api/developer/by-name/{name}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "name",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -132,8 +148,18 @@
         "IsRequired": false
       },
       {
-        "Name": "GenreIds",
-        "Type": "System.Collections.Generic.List\u00601[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Name": "PreviewImage",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Images",
+        "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Genres",
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       }
     ],
@@ -178,8 +204,18 @@
         "IsRequired": false
       },
       {
-        "Name": "GenreIds",
-        "Type": "System.Collections.Generic.List\u00601[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Name": "Genres",
+        "Type": "System.Collections.Generic.List\u00601[[BLL.DTO.Genre.GenreDTO, BLL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "PreviewImage",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Images",
+        "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
         "IsRequired": false
       }
     ],
@@ -187,7 +223,7 @@
   },
   {
     "ContainingType": "API.Controllers.GameController",
-    "Method": "GetByIdAsync",
+    "Method": "GetById",
     "RelativePath": "api/game/{id}",
     "HttpMethod": "GET",
     "IsController": true,

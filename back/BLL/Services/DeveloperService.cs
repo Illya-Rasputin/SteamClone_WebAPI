@@ -1,6 +1,9 @@
-﻿using BLL.DTO.Developer;
+﻿using AutoMapper;
+using BLL.DTO.Developer;
+using BLL.Settings;
 using DAL.Entities;
 using DAL.Repositories;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,31 +11,65 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace BLL.Services
 {
     public class DeveloperService
     {
         private readonly DeveloperRepository _developerRepository;
+        private readonly FileService _fileService;
+        private readonly IMapper _mapper;
 
-        public DeveloperService(DeveloperRepository developerRepository)
+        public DeveloperService(DeveloperRepository developerRepository, FileService fileService, IMapper mapper)
         {
             _developerRepository = developerRepository;
+            _fileService = fileService;
+            _mapper = mapper;
+        }
+
+        private async Task<ServiceResponse> SaveImageAsync(IFormFile image)
+        {
+            string guid = Guid.NewGuid().ToString();
+
+            string folderPath = Path.Combine(
+                StaticFilesSettings.Developers,
+                guid);
+
+            var result = await _fileService.SaveImageAsync(
+                image,
+                folderPath);
+
+            if (!result.IsSuccess)
+            {
+                return result;
+            }
+
+            string? fileName = result.Payload?.ToString();
+
+            if (string.IsNullOrWhiteSpace(fileName))
+            {
+                return ServiceResponse.Error(
+                    "Не вдалося отримати ім'я зображення");
+            }
+
+            return ServiceResponse.Success(
+                "Зображення розробника збережено",
+                $"{guid}/{fileName}");
         }
 
         public async Task<ServiceResponse> GetAllAsync()
         {
             var entities = await _developerRepository.Developers
-                .Include(d => d.Games)
+                .Include(developer => developer.Games)
                 .ToListAsync();
 
-            var dtos = entities.Select(e => new DeveloperDTO
-            {
-                Image = e.Image,
-                Name = e.Name,
-                Id = e.Id
-            });
+            var dtos = entities
+                .Select(entity => _mapper.Map<DeveloperDTO>(entity))
+                .ToList();
 
-            return ServiceResponse.Success("Розробників отримано", dtos);
+            return ServiceResponse.Success(
+                "Розробників отримано",
+                dtos);
         }
 
         public async Task<ServiceResponse> GetByIdAsync(int id)
@@ -41,83 +78,121 @@ namespace BLL.Services
 
             if (entity == null)
             {
-                return ServiceResponse.Error($"Розробник з id '{id}' не знайдений");
+                return ServiceResponse.Error(
+                    $"Розробник з id '{id}' не знайдений");
             }
 
-            var dto = new DeveloperDTO
-            {
-                Id = entity.Id,
-                Image = entity.Image,
-                Name = entity.Name
-            };
-
-            return ServiceResponse.Success("Розробника отримано", dto);
+            return ServiceResponse.Success(
+                "Розробника отримано",
+                _mapper.Map<DeveloperDTO>(entity));
         }
 
-        public async Task<ServiceResponse> CreateAsync(CreateDeveloperDTO dto)
+        public async Task<ServiceResponse> GetByNameAsync(string name)
+        {
+            var entity = await _developerRepository.GetByNameAsync(name);
+
+            if (entity == null)
+            {
+                return ServiceResponse.Error(
+                    $"Розробник з ім'ям '{name}' не знайдений");
+            }
+
+            return ServiceResponse.Success(
+                "Розробника отримано",
+                _mapper.Map<DeveloperDTO>(entity));
+        }
+
+        public async Task<ServiceResponse> CreateAsync(
+            CreateDeveloperDTO dto)
         {
             if (await _developerRepository.IsExistsAsync(dto.Name))
             {
-                return ServiceResponse.Error($"Ім'я '{dto.Name}' вже використовується");
+                return ServiceResponse.Error(
+                    $"Ім'я '{dto.Name}' вже використовується");
             }
 
-            // mapping
-            var entity = new DeveloperEntity
-            {
-                Name = dto.Name,
-                Image = dto.Image
-            };
+            var entity = _mapper.Map<DeveloperEntity>(dto);
 
-            bool res = await _developerRepository.CreateAsync(entity);
-
-            if (!res)
+            if (dto.Image != null)
             {
-                return ServiceResponse.Error($"Не вдалося додати розробника");
+                var imageResult = await SaveImageAsync(dto.Image);
+
+                if (!imageResult.IsSuccess)
+                {
+                    return imageResult;
+                }
+
+                entity.Image = imageResult.Payload?.ToString();
             }
 
-            var responseDto = new DeveloperDTO
-            {
-                Id = entity.Id,
-                Image = entity.Image,
-                Name = entity.Name
-            };
+            bool result = await _developerRepository.CreateAsync(entity);
 
-            return ServiceResponse.Success($"Розробник '{dto.Name}' успішно доданий", responseDto);
+            if (!result)
+            {
+                return ServiceResponse.Error(
+                    "Не вдалося додати розробника");
+            }
+
+            return ServiceResponse.Success(
+                $"Розробник '{entity.Name}' успішно доданий",
+                _mapper.Map<DeveloperDTO>(entity));
         }
 
-        public async Task<ServiceResponse> UpdateAsync(UpdateDeveloperDTO dto)
+
+        public async Task<ServiceResponse> UpdateAsync(
+    UpdateDeveloperDTO dto)
         {
             var entity = await _developerRepository.GetByIdAsync(dto.Id);
 
             if (entity == null)
             {
-                return ServiceResponse.Error($"Розробник з id '{dto.Id}' не знайдений");
+                return ServiceResponse.Error(
+                    $"Розробник з id '{dto.Id}' не знайдений");
             }
 
-            if (await _developerRepository.IsExistsAsync(dto.Name, dto.Id))
+            if (await _developerRepository.IsExistsAsync(
+                    dto.Name,
+                    dto.Id))
             {
-                return ServiceResponse.Error($"Ім'я '{dto.Name}' вже використовується");
+                return ServiceResponse.Error(
+                    $"Ім'я '{dto.Name}' вже використовується");
             }
 
             string oldName = entity.Name;
-            entity.Name = dto.Name;
-            entity.Image = dto.Image?.FileName;
 
-            bool res = await _developerRepository.UpdateAsync(entity);
+            _mapper.Map(dto, entity);
 
-            if (!res)
+            if (dto.Image != null)
             {
-                return ServiceResponse.Error($"Не вдалося змінити дані розробника");
+                if (!string.IsNullOrWhiteSpace(entity.Image))
+                {
+                    await _fileService.DeleteImageAsync(
+                        Path.Combine(StaticFilesSettings.Developers, entity.Image));
+                }
+
+                var imageResult = await SaveImageAsync(dto.Image);
+
+                if (!imageResult.IsSuccess)
+                {
+                    return imageResult;
+                }
+
+                entity.Image = imageResult.Payload?.ToString();
             }
 
-            var responseDto = new DeveloperDTO
-            {
-                Id = entity.Id,
-                Image = entity.Image,
-                Name = entity.Name
-            };
+            bool result = await _developerRepository.UpdateAsync(entity);
 
-            return ServiceResponse.Success($"Розробник '{oldName}' успішно змінений", responseDto);
+            if (!result)
+            {
+                return ServiceResponse.Error(
+                    "Не вдалося змінити дані розробника");
+            }
+
+            var responseDto = _mapper.Map<DeveloperDTO>(entity);
+
+            return ServiceResponse.Success(
+                $"Розробник '{oldName}' успішно змінений",
+                responseDto);
         }
 
         public async Task<ServiceResponse> DeleteAsync(int id)
@@ -127,6 +202,12 @@ namespace BLL.Services
             if (entity == null)
             {
                 return ServiceResponse.Error($"Розробник з id '{id}' не знайдений");
+            }
+
+            if (!string.IsNullOrWhiteSpace(entity.Image))
+            {
+                await _fileService.DeleteImageAsync(
+                    Path.Combine(StaticFilesSettings.Developers, entity.Image));
             }
 
             bool res = await _developerRepository.DeleteAsync(entity);

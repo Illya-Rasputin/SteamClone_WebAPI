@@ -167,8 +167,8 @@ C:\Users\cride\source\repos\SteamClone\back\API\bin\Debug\net9.0\ru\Microsoft.Co
 C:\Users\cride\source\repos\SteamClone\back\API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\cride\source\repos\SteamClone\back\API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\cride\source\repos\SteamClone\back\API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
-C:\Users\cride\source\repos\SteamClone\back\API\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\cride\source\repos\SteamClone\back\API\bin\Debug\net9.0\AutoMapper.dll
 C:\Users\cride\source\repos\SteamClone\back\API\bin\Debug\net9.0\BLL.dll
 C:\Users\cride\source\repos\SteamClone\back\API\bin\Debug\net9.0\BLL.pdb
 C:\Users\cride\source\repos\SteamClone\back\API\obj\Debug\net9.0\API.sourcelink.json
+C:\Users\cride\source\repos\SteamClone\back\API\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

@@ -6,3 +6,4 @@ C:\Users\cride\source\repos\SteamClone\back\obj\Debug\net9.0\API.AssemblyInfo.cs
 C:\Users\cride\source\repos\SteamClone\back\obj\Debug\net9.0\API.csproj.CoreCompileInputs.cache
 C:\Users\cride\source\repos\SteamClone\back\obj\Debug\net9.0\API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\cride\source\repos\SteamClone\back\obj\Debug\net9.0\API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\cride\source\repos\SteamClone\back\obj\Debug\net9.0\API.sourcelink.json

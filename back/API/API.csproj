@@ -22,4 +22,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="9.0.6" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Storage\Games\" />
+    <Folder Include="Storage\Developers\" />
+    <Folder Include="Storage\Share\" />
+  </ItemGroup>
+
 </Project>

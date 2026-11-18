@@ -8,7 +8,7 @@ namespace DAL.Entities
 {
     public class GameEntity: BaseEntity
     {
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
         public DateTime Release { get; set; } = DateTime.Now;
         public decimal Price { get; set; } = 0;
         public string? Description { get; set; }

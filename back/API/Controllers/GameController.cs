@@ -27,7 +27,7 @@ namespace API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetByIdAsync(int id)
+        public async Task<IActionResult> GetById(int id)
         {
             var response = await _gameService.GetByIdAsync(id);
             return this.GetResult(response);

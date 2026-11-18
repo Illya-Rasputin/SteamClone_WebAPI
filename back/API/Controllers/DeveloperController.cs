@@ -26,10 +26,17 @@ namespace API.Controllers
         }
 
         // api/developer/5
-        [HttpGet("{id}")]
+        [HttpGet("by-id/{id}")]
         public async Task<IActionResult> GetByIdAsync([FromRoute] int id)
         {
             var response = await _developerService.GetByIdAsync(id);
+            return this.GetResult(response);
+        }
+
+        [HttpGet("by-name/{name}")]
+        public async Task<IActionResult> GetByNameAsync([FromRoute] string name)
+        {
+            var response = await _developerService.GetByNameAsync(name);
             return this.GetResult(response);
         }
 

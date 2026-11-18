@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -11,6 +12,6 @@ namespace BLL.DTO.Developer
     {
         [Required(ErrorMessage = "Поле 'Name' є обов'язковим")]
         public string Name { get; set; } = string.Empty;
-        public string? Image { get; set; }
+        public IFormFile? Image { get; set; }
     }
 }
