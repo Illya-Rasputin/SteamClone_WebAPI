@@ -3,6 +3,62 @@
   "WorkspaceRootPath": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BCED897C-BA02-4FD3-A791-35B7C92C6797}|API\\API.csproj|c:\\users\\cride\\source\\repos\\steamclone\\back\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BCED897C-BA02-4FD3-A791-35B7C92C6797}|API\\API.csproj|solutionrelative:api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCED897C-BA02-4FD3-A791-35B7C92C6797}|API\\API.csproj|c:\\users\\cride\\source\\repos\\steamclone\\back\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCED897C-BA02-4FD3-A791-35B7C92C6797}|API\\API.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED0999EF-ECAB-4076-83AB-B4C002126F18}|DAL\\DAL.csproj|c:\\users\\cride\\source\\repos\\steamclone\\back\\dal\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED0999EF-ECAB-4076-83AB-B4C002126F18}|DAL\\DAL.csproj|solutionrelative:dal\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCED897C-BA02-4FD3-A791-35B7C92C6797}|API\\API.csproj|c:\\users\\cride\\source\\repos\\steamclone\\back\\api\\controllers\\developercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCED897C-BA02-4FD3-A791-35B7C92C6797}|API\\API.csproj|solutionrelative:api\\controllers\\developercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACB196B9-59DC-4ED9-932B-9B967B8BB288}|BLL\\BLL.csproj|c:\\users\\cride\\source\\repos\\steamclone\\back\\bll\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACB196B9-59DC-4ED9-932B-9B967B8BB288}|BLL\\BLL.csproj|solutionrelative:bll\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCED897C-BA02-4FD3-A791-35B7C92C6797}|API\\API.csproj|c:\\users\\cride\\source\\repos\\steamclone\\back\\api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCED897C-BA02-4FD3-A791-35B7C92C6797}|API\\API.csproj|solutionrelative:api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCED897C-BA02-4FD3-A791-35B7C92C6797}|API\\API.csproj|c:\\users\\cride\\source\\repos\\steamclone\\back\\api\\api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{BCED897C-BA02-4FD3-A791-35B7C92C6797}|API\\API.csproj|solutionrelative:api\\api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACB196B9-59DC-4ED9-932B-9B967B8BB288}|BLL\\BLL.csproj|c:\\users\\cride\\source\\repos\\steamclone\\back\\bll\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACB196B9-59DC-4ED9-932B-9B967B8BB288}|BLL\\BLL.csproj|solutionrelative:bll\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACB196B9-59DC-4ED9-932B-9B967B8BB288}|BLL\\BLL.csproj|c:\\users\\cride\\source\\repos\\steamclone\\back\\bll\\dto\\auth\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACB196B9-59DC-4ED9-932B-9B967B8BB288}|BLL\\BLL.csproj|solutionrelative:bll\\dto\\auth\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED0999EF-ECAB-4076-83AB-B4C002126F18}|DAL\\DAL.csproj|c:\\users\\cride\\source\\repos\\steamclone\\back\\dal\\entities\\userroleentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED0999EF-ECAB-4076-83AB-B4C002126F18}|DAL\\DAL.csproj|solutionrelative:dal\\entities\\userroleentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACB196B9-59DC-4ED9-932B-9B967B8BB288}|BLL\\BLL.csproj|c:\\users\\cride\\source\\repos\\steamclone\\back\\bll\\settings\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACB196B9-59DC-4ED9-932B-9B967B8BB288}|BLL\\BLL.csproj|solutionrelative:bll\\settings\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED0999EF-ECAB-4076-83AB-B4C002126F18}|DAL\\DAL.csproj|c:\\users\\cride\\source\\repos\\steamclone\\back\\dal\\initializer\\seeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED0999EF-ECAB-4076-83AB-B4C002126F18}|DAL\\DAL.csproj|solutionrelative:dal\\initializer\\seeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED0999EF-ECAB-4076-83AB-B4C002126F18}|DAL\\DAL.csproj|c:\\users\\cride\\source\\repos\\steamclone\\back\\dal\\entities\\userentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED0999EF-ECAB-4076-83AB-B4C002126F18}|DAL\\DAL.csproj|solutionrelative:dal\\entities\\userentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED0999EF-ECAB-4076-83AB-B4C002126F18}|DAL\\DAL.csproj|c:\\users\\cride\\source\\repos\\steamclone\\back\\dal\\entities\\roleentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED0999EF-ECAB-4076-83AB-B4C002126F18}|DAL\\DAL.csproj|solutionrelative:dal\\entities\\roleentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{ACB196B9-59DC-4ED9-932B-9B967B8BB288}|BLL\\BLL.csproj|c:\\users\\cride\\source\\repos\\steamclone\\back\\bll\\services\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ACB196B9-59DC-4ED9-932B-9B967B8BB288}|BLL\\BLL.csproj|solutionrelative:bll\\services\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -39,10 +95,6 @@
       "RelativeMoniker": "D:0:0:{ED0999EF-ECAB-4076-83AB-B4C002126F18}|DAL\\DAL.csproj|solutionrelative:dal\\entities\\developerentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BCED897C-BA02-4FD3-A791-35B7C92C6797}|API\\API.csproj|c:\\users\\cride\\source\\repos\\steamclone\\back\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BCED897C-BA02-4FD3-A791-35B7C92C6797}|API\\API.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{ACB196B9-59DC-4ED9-932B-9B967B8BB288}|BLL\\BLL.csproj|c:\\users\\cride\\source\\repos\\steamclone\\back\\bll\\dto\\developer\\createdeveloperdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ACB196B9-59DC-4ED9-932B-9B967B8BB288}|BLL\\BLL.csproj|solutionrelative:bll\\dto\\developer\\createdeveloperdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -53,10 +105,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{ED0999EF-ECAB-4076-83AB-B4C002126F18}|DAL\\DAL.csproj|c:\\users\\cride\\source\\repos\\steamclone\\back\\dal\\entities\\gameimageentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ED0999EF-ECAB-4076-83AB-B4C002126F18}|DAL\\DAL.csproj|solutionrelative:dal\\entities\\gameimageentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BCED897C-BA02-4FD3-A791-35B7C92C6797}|API\\API.csproj|c:\\users\\cride\\source\\repos\\steamclone\\back\\api\\controllers\\developercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BCED897C-BA02-4FD3-A791-35B7C92C6797}|API\\API.csproj|solutionrelative:api\\controllers\\developercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ACB196B9-59DC-4ED9-932B-9B967B8BB288}|BLL\\BLL.csproj|c:\\users\\cride\\source\\repos\\steamclone\\back\\bll\\dto\\game\\updategamedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -98,7 +146,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -134,7 +182,185 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\API\\appsettings.json",
+              "RelativeDocumentMoniker": "API\\appsettings.json",
+              "ToolTip": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\API\\appsettings.json",
+              "RelativeToolTip": "API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-11-20T19:28:10.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "API",
+              "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\API\\API.csproj",
+              "RelativeDocumentMoniker": "API\\API.csproj",
+              "ToolTip": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\API\\API.csproj",
+              "RelativeToolTip": "API\\API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-11-20T19:11:35.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "API\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-20T18:44:39.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\BLL\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\BLL\\Services\\AuthService.cs",
+              "RelativeToolTip": "BLL\\Services\\AuthService.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAUwBYAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-20T18:38:13.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "JwtService.cs",
+              "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\BLL\\Services\\JwtService.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\JwtService.cs",
+              "ToolTip": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\BLL\\Services\\JwtService.cs",
+              "RelativeToolTip": "BLL\\Services\\JwtService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-20T18:37:59.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LoginDTO.cs",
+              "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\BLL\\DTO\\Auth\\LoginDTO.cs",
+              "RelativeDocumentMoniker": "BLL\\DTO\\Auth\\LoginDTO.cs",
+              "ToolTip": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\BLL\\DTO\\Auth\\LoginDTO.cs",
+              "RelativeToolTip": "BLL\\DTO\\Auth\\LoginDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-20T18:23:34.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DeveloperController.cs",
+              "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\API\\Controllers\\DeveloperController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\DeveloperController.cs",
+              "ToolTip": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\API\\Controllers\\DeveloperController.cs",
+              "RelativeToolTip": "API\\Controllers\\DeveloperController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-17T16:22:06.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\API\\Program.cs",
+              "RelativeDocumentMoniker": "API\\Program.cs",
+              "ToolTip": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\API\\Program.cs",
+              "RelativeToolTip": "API\\Program.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAEMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-18T14:52:18.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserRoleEntity.cs",
+              "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\DAL\\Entities\\UserRoleEntity.cs",
+              "RelativeDocumentMoniker": "DAL\\Entities\\UserRoleEntity.cs",
+              "ToolTip": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\DAL\\Entities\\UserRoleEntity.cs",
+              "RelativeToolTip": "DAL\\Entities\\UserRoleEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-20T13:18:13.463Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\DAL\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "DAL\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\DAL\\AppDbContext.cs",
+              "RelativeToolTip": "DAL\\AppDbContext.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAuwBcAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-20T13:27:53.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "JwtSettings.cs",
+              "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\BLL\\Settings\\JwtSettings.cs",
+              "RelativeDocumentMoniker": "BLL\\Settings\\JwtSettings.cs",
+              "ToolTip": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\BLL\\Settings\\JwtSettings.cs",
+              "RelativeToolTip": "BLL\\Settings\\JwtSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-20T13:32:30.825Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Seeder.cs",
+              "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\DAL\\Initializer\\Seeder.cs",
+              "RelativeDocumentMoniker": "DAL\\Initializer\\Seeder.cs",
+              "ToolTip": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\DAL\\Initializer\\Seeder.cs",
+              "RelativeToolTip": "DAL\\Initializer\\Seeder.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAADwvxwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-20T13:33:19.968Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "RoleEntity.cs",
+              "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\DAL\\Entities\\RoleEntity.cs",
+              "RelativeDocumentMoniker": "DAL\\Entities\\RoleEntity.cs",
+              "ToolTip": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\DAL\\Entities\\RoleEntity.cs",
+              "RelativeToolTip": "DAL\\Entities\\RoleEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-20T13:17:59.653Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserEntity.cs",
+              "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\DAL\\Entities\\UserEntity.cs",
+              "RelativeDocumentMoniker": "DAL\\Entities\\UserEntity.cs",
+              "ToolTip": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\DAL\\Entities\\UserEntity.cs",
+              "RelativeToolTip": "DAL\\Entities\\UserEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-20T13:17:49.712Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "GameController.cs",
               "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\API\\Controllers\\GameController.cs",
               "RelativeDocumentMoniker": "API\\Controllers\\GameController.cs",
@@ -142,12 +368,11 @@
               "RelativeToolTip": "API\\Controllers\\GameController.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAmwB0AAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-17T17:03:18.479Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-17T17:03:18.479Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 19,
               "Title": "GameDTO.cs",
               "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\BLL\\DTO\\Game\\GameDTO.cs",
               "RelativeDocumentMoniker": "BLL\\DTO\\Game\\GameDTO.cs",
@@ -155,12 +380,11 @@
               "RelativeToolTip": "BLL\\DTO\\Game\\GameDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-17T17:07:00.359Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-17T17:07:00.359Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 17,
               "Title": "GameImageRepository.cs",
               "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\DAL\\Repositories\\GameImageRepository.cs",
               "RelativeDocumentMoniker": "DAL\\Repositories\\GameImageRepository.cs",
@@ -168,12 +392,11 @@
               "RelativeToolTip": "DAL\\Repositories\\GameImageRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-17T16:45:23.226Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-17T16:45:23.226Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 16,
               "Title": "GameRepository.cs",
               "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\DAL\\Repositories\\GameRepository.cs",
               "RelativeDocumentMoniker": "DAL\\Repositories\\GameRepository.cs",
@@ -181,25 +404,23 @@
               "RelativeToolTip": "DAL\\Repositories\\GameRepository.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAlwCIAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-17T18:06:16.651Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-17T18:06:16.651Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 14,
               "Title": "GameService.cs",
               "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\BLL\\Services\\GameService.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\GameService.cs",
               "ToolTip": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\BLL\\Services\\GameService.cs",
               "RelativeToolTip": "BLL\\Services\\GameService.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAJMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAvwJMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-17T16:18:51.602Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-17T16:18:51.602Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 15,
               "Title": "DeveloperService.cs",
               "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\BLL\\Services\\DeveloperService.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\DeveloperService.cs",
@@ -207,12 +428,11 @@
               "RelativeToolTip": "BLL\\Services\\DeveloperService.cs",
               "ViewState": "AgIAAMQAAAAAAAAAAAAEwNEAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-17T16:21:59.233Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-17T16:21:59.233Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 22,
               "Title": "DeveloperEntity.cs",
               "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\DAL\\Entities\\DeveloperEntity.cs",
               "RelativeDocumentMoniker": "DAL\\Entities\\DeveloperEntity.cs",
@@ -220,12 +440,11 @@
               "RelativeToolTip": "DAL\\Entities\\DeveloperEntity.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-18T15:58:32.534Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-18T15:58:32.534Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 24,
               "Title": "DeveloperDTO.cs",
               "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\BLL\\DTO\\Developer\\DeveloperDTO.cs",
               "RelativeDocumentMoniker": "BLL\\DTO\\Developer\\DeveloperDTO.cs",
@@ -237,7 +456,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 25,
               "Title": "GameImageEntity.cs",
               "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\DAL\\Entities\\GameImageEntity.cs",
               "RelativeDocumentMoniker": "DAL\\Entities\\GameImageEntity.cs",
@@ -249,7 +468,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 21,
               "Title": "DeveloperRepository.cs",
               "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\DAL\\Repositories\\DeveloperRepository.cs",
               "RelativeDocumentMoniker": "DAL\\Repositories\\DeveloperRepository.cs",
@@ -257,12 +476,11 @@
               "RelativeToolTip": "DAL\\Repositories\\DeveloperRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-17T16:25:31.888Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-17T16:25:31.888Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 20,
               "Title": "FileService.cs",
               "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\BLL\\Services\\FileService.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\FileService.cs",
@@ -270,25 +488,11 @@
               "RelativeToolTip": "BLL\\Services\\FileService.cs",
               "ViewState": "AgIAAEkAAAAAAAAAAAAmwE8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-17T16:39:09.415Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-17T16:39:09.415Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\API\\Program.cs",
-              "RelativeDocumentMoniker": "API\\Program.cs",
-              "ToolTip": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\API\\Program.cs",
-              "RelativeToolTip": "API\\Program.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwDkAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-18T14:52:18.259Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 23,
               "Title": "CreateDeveloperDTO.cs",
               "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\BLL\\DTO\\Developer\\CreateDeveloperDTO.cs",
               "RelativeDocumentMoniker": "BLL\\DTO\\Developer\\CreateDeveloperDTO.cs",
@@ -296,12 +500,11 @@
               "RelativeToolTip": "BLL\\DTO\\Developer\\CreateDeveloperDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-17T19:16:02.052Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-17T19:16:02.052Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 26,
               "Title": "UpdateGameDTO.cs",
               "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\BLL\\DTO\\Game\\UpdateGameDTO.cs",
               "RelativeDocumentMoniker": "BLL\\DTO\\Game\\UpdateGameDTO.cs",
@@ -313,19 +516,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "DeveloperController.cs",
-              "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\API\\Controllers\\DeveloperController.cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\DeveloperController.cs",
-              "ToolTip": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\API\\Controllers\\DeveloperController.cs",
-              "RelativeToolTip": "API\\Controllers\\DeveloperController.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAwwCUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-17T16:22:06.993Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 27,
               "Title": "GameEntity.cs",
               "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\DAL\\Entities\\GameEntity.cs",
               "RelativeDocumentMoniker": "DAL\\Entities\\GameEntity.cs",
@@ -337,7 +528,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 28,
               "Title": "GenreEntity.cs",
               "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\DAL\\Entities\\GenreEntity.cs",
               "RelativeDocumentMoniker": "DAL\\Entities\\GenreEntity.cs",
@@ -349,7 +540,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 29,
               "Title": "GameImageDTO.cs",
               "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\BLL\\DTO\\Game\\GameImageDTO.cs",
               "RelativeDocumentMoniker": "BLL\\DTO\\Game\\GameImageDTO.cs",
@@ -361,7 +552,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 30,
               "Title": "CreateGameDTO.cs",
               "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\BLL\\DTO\\Game\\CreateGameDTO.cs",
               "RelativeDocumentMoniker": "BLL\\DTO\\Game\\CreateGameDTO.cs",
@@ -373,7 +564,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 31,
               "Title": "StaticFileSettings.cs",
               "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\BLL\\Settings\\StaticFileSettings.cs",
               "RelativeDocumentMoniker": "BLL\\Settings\\StaticFileSettings.cs",
@@ -385,7 +576,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 32,
               "Title": "GenreRepository.cs",
               "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\DAL\\Repositories\\GenreRepository.cs",
               "RelativeDocumentMoniker": "DAL\\Repositories\\GenreRepository.cs",
@@ -397,7 +588,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 33,
               "Title": "GenreController.cs",
               "DocumentMoniker": "C:\\Users\\cride\\source\\repos\\SteamClone\\back\\API\\Controllers\\GenreController.cs",
               "RelativeDocumentMoniker": "API\\Controllers\\GenreController.cs",

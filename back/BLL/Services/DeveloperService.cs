@@ -68,7 +68,7 @@ namespace BLL.Services
                 .ToList();
 
             return ServiceResponse.Success(
-                "Розробників отримано",
+                "Список розробників отримано",
                 dtos);
         }
 

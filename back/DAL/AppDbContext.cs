@@ -1,5 +1,7 @@
 ﻿using DAL.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<UserEntity, RoleEntity, string, IdentityUserClaim<string>, UserRoleEntity, IdentityUserLogin<string>,
+            IdentityRoleClaim<string>, IdentityUserToken<string>>
     {
-        public AppDbContext(DbContextOptions options)
+        public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options)
         {
-
         }
 
         public DbSet<GameEntity> Games { get; set; }
@@ -91,6 +93,31 @@ namespace DAL
                 .HasMany(g => g.Genres)
                 .WithMany(g => g.Games)
                 .UsingEntity("GameGenres");
+
+
+            builder.Entity<UserEntity>(e =>
+            {
+                e.Property(u => u.FirstName)
+                .HasMaxLength(100);
+
+                e.Property(u => u.LastName)
+                .HasMaxLength(100);
+
+                e.Property(u => u.Image)
+                .HasMaxLength(50);
+            });
+
+            builder.Entity<UserEntity>()
+                .HasMany(u => u.UserRoles)
+                .WithOne(ur => ur.User)
+                .HasForeignKey(ur => ur.UserId)
+                .IsRequired();
+
+            builder.Entity<RoleEntity>()
+                .HasMany(r => r.UserRoles)
+                .WithOne(ur => ur.Role)
+                .HasForeignKey(ur => ur.RoleId)
+                .IsRequired();
         }
     }
 }

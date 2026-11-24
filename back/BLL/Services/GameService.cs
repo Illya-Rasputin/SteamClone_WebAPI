@@ -34,20 +34,10 @@ namespace BLL.Services
         {
             var entities = await _gameRepository.Games
                 .Include(g => g.Developer)
+                .Include(g => g.Genres)
                 .ToListAsync();
 
-            var dtos = entities.Select(e => new GameDTO
-            {
-                Images = e.Images.Select(i => new GameImageDTO
-                {
-                    Name = i.Name,
-                    IsPreview = i.IsPreview,
-                    GameId = i.GameId,
-                    Game = i.Game
-                }).ToList(),
-                Name = e.Name,
-                Id = e.Id
-            });
+            var dtos = entities.Select(entity => _mapper.Map<GameDTO>(entity));
 
             return ServiceResponse.Success("Ігор отримано", dtos);
         }
@@ -90,28 +80,17 @@ namespace BLL.Services
 
         public async Task<ServiceResponse> GetByIdAsync(int id)
         {
-            var entity = await _gameRepository.GetById(id);
+            var entity = await _gameRepository.Games
+                .Include(game => game.Developer)
+                .Include(game => game.Genres)
+                .FirstOrDefaultAsync(game => game.Id == id);
 
             if (entity == null)
             {
                 return ServiceResponse.Error($"Гра з id '{id}' не знайдена");
             }
 
-            var dto = new GameDTO
-            {
-                Id = entity.Id,
-                Name = entity.Name,
-                Price = entity.Price,
-                DeveloperId = entity.DeveloperId,
-                Images = entity.Images.Select(image => new GameImageDTO
-                {
-                    Name = image.Name,
-                    IsPreview = image.IsPreview,
-                    GameId = entity.Id
-                }).ToList()
-            };
-
-            return ServiceResponse.Success("Гру отримано", dto);
+            return ServiceResponse.Success("Гру отримано", _mapper.Map<GameDTO>(entity));
         }
         public async Task<ServiceResponse> CreateAsync(CreateGameDTO dto)
         {
@@ -157,6 +136,9 @@ namespace BLL.Services
             }
 
             _mapper.Map(dto, entity);
+            entity.Genres = await _genreRepository.Genres
+                .Where(genre => dto.Genres.Select(item => item.Id).Contains(genre.Id))
+                .ToListAsync();
 
             if (dto.PreviewImage != null)
             {

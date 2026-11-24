@@ -1,6 +1,8 @@
 ﻿using API.Extensions;
 using BLL.DTO.Developer;
 using BLL.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,6 +10,7 @@ namespace API.Controllers
 {
     [ApiController]
     [Route("api/developer")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class DeveloperController : ControllerBase
     {
         private readonly DeveloperService _developerService;
@@ -41,6 +44,7 @@ namespace API.Controllers
         }
 
         [HttpPost]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "admin")]
         public async Task<IActionResult> CreateAsync([FromForm] CreateDeveloperDTO dto)
         {
             var response = await _developerService.CreateAsync(dto);
@@ -48,6 +52,7 @@ namespace API.Controllers
         }
 
         [HttpPut]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "admin")]
         public async Task<IActionResult> UpdateAsync([FromForm] UpdateDeveloperDTO dto)
         {
             var response = await _developerService.UpdateAsync(dto);
@@ -55,6 +60,7 @@ namespace API.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "admin")]
         public async Task<IActionResult> DeleteAsync([FromRoute] int id)
         {
             var response = await _developerService.DeleteAsync(id);
